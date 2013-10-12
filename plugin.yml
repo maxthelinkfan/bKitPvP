@@ -1,0 +1,39 @@
+name:  KitPvP
+main:  me.kitpvp.SonicKit.Main
+version:  1.1
+commands:
+   pvp:
+     permission: KitPvP.pvp
+   archer:
+     permission: KitPvP.archer
+   elite:
+     permission: KitPvP.elite
+   knight:
+     permission: KitPvP.knight
+   blaze:
+     permission: KitPvP.blaze
+   tank:
+     permission: KitPvP.tank
+   fisherman:
+     permission: KitPvP.fisherman
+   switcher:
+     permission: KitPvP.switcher
+   sniper:
+     permission: KitPvP.sniper
+   grandpa:
+     permission: KitPvP.grandpa
+   viking:
+     permission: KitPvP.viking
+   scout:
+     permission: KitPvP.scout
+   help:
+     description: The help msg!
+   pl:
+     description: Plugins
+   ?:
+     description: Plugins
+   kits:
+     permission: KitPvP.kits
+   sonic:
+     permission: KitPvP.sonic
+   rules:
