@@ -1,6 +1,5 @@
 package me.kitpvp.Kits;
 
-
 import me.kitpvp.SonicKit.Main;
 
 import org.bukkit.ChatColor;
@@ -16,15 +15,15 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class Dwarf implements CommandExecutor {
+public class Urgal implements CommandExecutor {
 	
 	private Main plugin;
-	public Dwarf(Main plugin) {
+	public Urgal(Main plugin) {
 		this.plugin = plugin;
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(commandLabel.equalsIgnoreCase("dwarf") && sender.hasPermission("KitPvP.dwarf")){
+		if(commandLabel.equalsIgnoreCase("urgal") && sender.hasPermission("KitPvP.urgal")){
 			
 			// Create variables
 			Player p = (Player) sender;
@@ -38,32 +37,31 @@ public class Dwarf implements CommandExecutor {
 		        p.removePotionEffect(effect.getType());
 			
 			// Send the player a message
-			String dwarf = plugin.getConfig().getString("dwarfmsg");
+			String urgal = plugin.getConfig().getString("urgalmsg");
 String prefixmsg = plugin.getConfig().getString("prefixmsg");
 			
-			p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + dwarf);
+			p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + urgal);
 			
 			// List Items
-			ItemStack sword = new ItemStack(Material.IRON_SWORD);
+			ItemStack sword = new ItemStack(Material.WOOD_SWORD);
 			
 			
 			
             // List armor
-            ItemStack helm = new ItemStack(Material.CHAINMAIL_HELMET);
-            ItemStack chest = new ItemStack(Material.CHAINMAIL_CHESTPLATE);
-            ItemStack legs = new ItemStack(Material.CHAINMAIL_LEGGINGS);
-            ItemStack boots = new ItemStack(Material.CHAINMAIL_BOOTS);
+            ItemStack helm = new ItemStack(Material.LEATHER_HELMET);
+            ItemStack chest = new ItemStack(Material.LEATHER_CHESTPLATE);
+            ItemStack legs = new ItemStack(Material.LEATHER_LEGGINGS);
+            ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
             
             // Enchant any items 
-            sword.addUnsafeEnchantment(Enchantment.KNOCKBACK, 5);
-            sword.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 1);
+            sword.addEnchantment(Enchantment.DAMAGE_ALL, 2);
             helm.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
             chest.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
             legs.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
             boots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
             
             // Add any potion effects
-            p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100000000, 1));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 100000000, 1));
             
             // Add items to inventory (weapons first.)
             inv.addItem(sword);

@@ -36,4 +36,8 @@ commands:
      permission: KitPvP.kits
    sonic:
      permission: KitPvP.sonic
+   dwarf:
+     permission: KitPvP.dwarf
+   urgal:
+     permission: KitPvP.urgal
    rules:
