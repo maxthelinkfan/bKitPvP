@@ -40,4 +40,6 @@ commands:
      permission: KitPvP.dwarf
    urgal:
      permission: KitPvP.urgal
+   soup:
+     permission: KitPvP.soup
    rules:

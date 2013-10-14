@@ -28,7 +28,8 @@ public class Main_Help implements CommandExecutor {
 			p.sendMessage(ChatColor.GOLD + "/kits" + ChatColor.WHITE + " - Find out what kits you have!");
 			p.sendMessage(ChatColor.GOLD + "/who" + ChatColor.WHITE + " - List all the online players!");
 			p.sendMessage(ChatColor.GOLD + "/rules" + ChatColor.WHITE + " - Lists all the rules!");
-			p.sendMessage(ChatColor.GOLD + "/kit" + ChatColor.WHITE + " - Opens the kit selector!");
+			p.sendMessage(ChatColor.GOLD + "/events" + ChatColor.WHITE + " - Lists all the events on the server!");
+			p.sendMessage(ChatColor.GOLD + "/soup" + ChatColor.WHITE + " - Gives you eight soup!");
 		}
 		return false;
 	}

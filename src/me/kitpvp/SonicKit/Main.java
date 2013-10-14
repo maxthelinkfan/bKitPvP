@@ -3,6 +3,7 @@ package me.kitpvp.SonicKit;
 import me.kitpvp.Events.HungerDisable;
 import me.kitpvp.Events.JoinMessage;
 import me.kitpvp.Events.Respawn;
+import me.kitpvp.Events.SlashSoup;
 import me.kitpvp.Help.Kits;
 import me.kitpvp.Help.Main_Help;
 import me.kitpvp.Help.Pl;
@@ -50,6 +51,7 @@ public class Main extends JavaPlugin implements Listener {
 	private Sonic executor20;
 	private Urgal executor21;
 	private Dwarf executor22;
+	private SlashSoup executor23;
 
 	//Define Events
 	private HungerDisable PlayerListener = new HungerDisable(this);
@@ -123,6 +125,9 @@ public class Main extends JavaPlugin implements Listener {
 	
 	executor22 = new Dwarf(this);
 	getCommand("dwarf").setExecutor(executor22);
+	
+	executor23 = new SlashSoup(this);
+	getCommand("soup").setExecutor(executor23);
 	
 	
 
