@@ -10,6 +10,7 @@ import me.kitpvp.Help.Pl2;
 import me.kitpvp.Help.Rules;
 import me.kitpvp.Kits.Archer;
 import me.kitpvp.Kits.Blaze;
+import me.kitpvp.Kits.Dwarf;
 import me.kitpvp.Kits.Elite;
 import me.kitpvp.Kits.Fisherman;
 import me.kitpvp.Kits.Grandpa;
@@ -19,6 +20,7 @@ import me.kitpvp.Kits.Sniper;
 import me.kitpvp.Kits.Sonic;
 import me.kitpvp.Kits.Switcher;
 import me.kitpvp.Kits.Tank;
+import me.kitpvp.Kits.Urgal;
 import me.kitpvp.Kits.Viking;
 import me.kitpvp.Kits.scout;
 
@@ -46,8 +48,10 @@ public class Main extends JavaPlugin implements Listener {
 	private Rules executor18;
 	private Kits executor19;
 	private Sonic executor20;
+	private Urgal executor21;
+	private Dwarf executor22;
 
-	
+	//Define Events
 	private HungerDisable PlayerListener = new HungerDisable(this);
 	private JoinMessage PlayerListener4 = new JoinMessage(this);
 	private Respawn PlayerListener7 = new Respawn(this);
@@ -56,7 +60,9 @@ public class Main extends JavaPlugin implements Listener {
 	public void onEnable() {
 		getConfig().options().copyDefaults(true);
         saveConfig();
-		
+        
+        
+	//Register Commands	
 	executor = new PvP(this);
 	getCommand("pvp").setExecutor(executor);
 	
@@ -112,13 +118,20 @@ public class Main extends JavaPlugin implements Listener {
 	executor20 = new Sonic(this);
 	getCommand("sonic").setExecutor(executor20);
 	
+	executor21 = new Urgal(this);
+	getCommand("urgal").setExecutor(executor21);
+	
+	executor22 = new Dwarf(this);
+	getCommand("dwarf").setExecutor(executor22);
+	
+	
 
 	
 	
 	
 	
 	
-	
+	//Register Events
 	PluginManager event = getServer().getPluginManager();
     event.registerEvents(this.PlayerListener, this);
     
