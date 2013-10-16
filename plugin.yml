@@ -1,31 +1,85 @@
 name:  KitPvP
 main:  me.kitpvp.SonicKit.Main
 version:  1.1
+permissions:
+    kitpvp.vip:
+       children:
+           kitpvp.pvp: true
+           kitpvp.archer: true
+           kitpvp.elite: true
+           kitpvp.knight: true
+           kitpvp.scout: true
+           kitpvp.grandpa: true
+    kitpvp.mvp:
+       children:
+           kitpvp.pvp: true
+           kitpvp.archer: true
+           kitpvp.elite: true
+           kitpvp.knight: true
+           kitpvp.scout: true
+           kitpvp.grandpa: true
+           kitpvp.switcher: true
+           kitpvp.viking: true
+           kitpvp.urgal: true
+           kitpvp.dwarf: t
+    kitpvp.pro:
+       children:
+           kitpvp.pvp: true
+           kitpvp.archer: true
+           kitpvp.elite: true
+           kitpvp.knight: true
+           kitpvp.scout: true
+           kitpvp.grandpa: true
+           kitpvp.switcher: true
+           kitpvp.viking: true
+           kitpvp.urgal: true
+           kitpvp.dwarf: true
+           kitpvp.sniper: true
+           kitpvp.sonic: true
+    kitpvp.titan:
+       description: Use all MOTD commands.
+       children:
+           kitpvp.blaze: true
+           kitpvp.pvp: true
+           kitpvp.archer: true
+           kitpvp.elite: true
+           kitpvp.knight: true
+           kitpvp.tank: true
+           kitpvp.fisherman: true
+           kitpvp.switcher: true
+           kitpvp.sniper: true
+           kitpvp.grandpa: true
+           kitpvp.viking: true
+           kitpvp.scout: true
+           kitpvp.sonic: true
+           kitpvp.urgal: true
+           kitpvp.dwarf: true
+           kitpvp.kits: true
 commands:
    pvp:
-     permission: KitPvP.pvp
+     description: KitPvP.pvp
    archer:
-     permission: KitPvP.archer
+     description: KitPvP.archer
    elite:
-     permission: KitPvP.elite
+     description: KitPvP.elite
    knight:
-     permission: KitPvP.knight
+     description: KitPvP.knight
    blaze:
-     permission: KitPvP.blaze
+     description: KitPvP.blaze
    tank:
-     permission: KitPvP.tank
+     description: KitPvP.tank
    fisherman:
-     permission: KitPvP.fisherman
+     description: KitPvP.fisherman
    switcher:
-     permission: KitPvP.switcher
+     description: KitPvP.switcher
    sniper:
-     permission: KitPvP.sniper
+     description: KitPvP.sniper
    grandpa:
-     permission: KitPvP.grandpa
+     description: KitPvP.grandpa
    viking:
-     permission: KitPvP.viking
+     description: KitPvP.viking
    scout:
-     permission: KitPvP.scout
+     description: KitPvP.scout
    help:
      description: The help msg!
    pl:
@@ -33,13 +87,13 @@ commands:
    ?:
      description: Plugins
    kits:
-     permission: KitPvP.kits
+     description: KitPvP.kits
    sonic:
-     permission: KitPvP.sonic
-   dwarf:
-     permission: KitPvP.dwarf
+     description: KitPvP.sonic
    urgal:
-     permission: KitPvP.urgal
+     description: KitPvP.urgal
+   dwarf:
+     description: KitPvP.dwarf
    soup:
-     permission: KitPvP.soup
+     description: KitPvP.soup
    rules:

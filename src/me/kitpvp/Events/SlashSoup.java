@@ -34,9 +34,9 @@ public class SlashSoup implements CommandExecutor, Listener {
 			final Player p = (Player) sender;
 			final Inventory inv = p.getInventory();
 			
-			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 5, 99));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 5, 99));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 5, 99));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 10, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 10, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 10, 0));
 			
 			new BukkitRunnable() {
           	  @Override
