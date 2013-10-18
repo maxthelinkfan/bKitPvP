@@ -21,7 +21,7 @@ permissions:
            kitpvp.switcher: true
            kitpvp.viking: true
            kitpvp.urgal: true
-           kitpvp.dwarf: t
+           kitpvp.dwarf: true
     kitpvp.pro:
        children:
            kitpvp.pvp: true
