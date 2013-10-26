@@ -2,6 +2,7 @@ package me.kitpvp.SonicKit;
 
 import me.kitpvp.Events.HungerDisable;
 import me.kitpvp.Events.JoinMessage;
+import me.kitpvp.Events.KillEvent;
 import me.kitpvp.Events.Respawn;
 import me.kitpvp.Events.SlashSoup;
 import me.kitpvp.Help.Kits;
@@ -24,9 +25,11 @@ import me.kitpvp.Kits.Tank;
 import me.kitpvp.Kits.Urgal;
 import me.kitpvp.Kits.Viking;
 import me.kitpvp.Kits.scout;
+import net.milkbowl.vault.economy.Economy;
 
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
@@ -52,16 +55,30 @@ public class Main extends JavaPlugin implements Listener {
 	private Urgal executor21;
 	private Dwarf executor22;
 	private SlashSoup executor23;
+	
+	 public static Economy economy = null;
+	
+	  private boolean setupEconomy()
+	    {
+	        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
+	        if (economyProvider != null) {
+	            economy = economyProvider.getProvider();
+	        }
+
+	        return (economy != null);
+	    }
 
 	//Define Events
 	private HungerDisable PlayerListener = new HungerDisable(this);
 	private JoinMessage PlayerListener4 = new JoinMessage(this);
 	private Respawn PlayerListener7 = new Respawn(this);
+	private KillEvent kill = new KillEvent(this);
 	
 	
 	public void onEnable() {
 		getConfig().options().copyDefaults(true);
         saveConfig();
+        setupEconomy();
         
         
 	//Register Commands	
@@ -147,6 +164,9 @@ public class Main extends JavaPlugin implements Listener {
     
     PluginManager respawn = getServer().getPluginManager();
     respawn.registerEvents(this.PlayerListener7, this);
+    
+    PluginManager kill = getServer().getPluginManager();
+    kill.registerEvents(this.kill, this);
     
     
     
