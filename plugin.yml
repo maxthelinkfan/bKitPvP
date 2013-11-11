@@ -96,4 +96,6 @@ commands:
      description: KitPvP.dwarf
    soup:
      description: KitPvP.soup
+   viper:
+     description: Kitpvp.viper
    rules:

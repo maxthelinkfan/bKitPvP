@@ -1,5 +1,6 @@
 package me.kitpvp.SonicKit;
 
+import me.kitpvp.Events.DeathEvent;
 import me.kitpvp.Events.HungerDisable;
 import me.kitpvp.Events.JoinMessage;
 import me.kitpvp.Events.KillEvent;
@@ -24,6 +25,7 @@ import me.kitpvp.Kits.Switcher;
 import me.kitpvp.Kits.Tank;
 import me.kitpvp.Kits.Urgal;
 import me.kitpvp.Kits.Viking;
+import me.kitpvp.Kits.Viper;
 import me.kitpvp.Kits.scout;
 import net.milkbowl.vault.economy.Economy;
 
@@ -33,6 +35,12 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
+	
+	
+	SettingsManager settings = SettingsManager.getInstance();
+	
+	
+	
 	// Define Command Executors
 	private PvP executor;
 	private Archer executor1;
@@ -55,6 +63,9 @@ public class Main extends JavaPlugin implements Listener {
 	private Urgal executor21;
 	private Dwarf executor22;
 	private SlashSoup executor23;
+	private Viper executor24;
+	
+	
 	
 	 public static Economy economy = null;
 	
@@ -73,11 +84,13 @@ public class Main extends JavaPlugin implements Listener {
 	private JoinMessage PlayerListener4 = new JoinMessage(this);
 	private Respawn PlayerListener7 = new Respawn(this);
 	private KillEvent kill = new KillEvent(this);
+	private DeathEvent d = new DeathEvent(this);
 	
 	
 	public void onEnable() {
 		getConfig().options().copyDefaults(true);
         saveConfig();
+        settings.setup(this);
         setupEconomy();
         
         
@@ -146,6 +159,9 @@ public class Main extends JavaPlugin implements Listener {
 	executor23 = new SlashSoup(this);
 	getCommand("soup").setExecutor(executor23);
 	
+	executor24 = new Viper(this);
+	getCommand("viper").setExecutor(executor24);
+	
 	
 
 	
@@ -167,6 +183,9 @@ public class Main extends JavaPlugin implements Listener {
     
     PluginManager kill = getServer().getPluginManager();
     kill.registerEvents(this.kill, this);
+    
+    PluginManager d = getServer().getPluginManager();
+    d.registerEvents(this.d, this);
     
     
     

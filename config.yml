@@ -24,4 +24,5 @@ minermsg: You have equiped the Miner kit!
 sonicmsg: You have equiped the Sonic kit!
 dwarfmsg: You have equiped the Dwarf kit!
 urgalmsg: You have equiped the Urgal kit!
-prefixmsg: SonicKitPvP
+prefixmsg: MinecraftKits
+cashonkill: 30

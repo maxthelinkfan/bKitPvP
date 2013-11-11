@@ -17,6 +17,7 @@ public class HungerDisable implements Listener{
         @EventHandler
         public void onFoodLevelChange(FoodLevelChangeEvent food)
         {
+        	
           food.setCancelled(true);
         }
 }

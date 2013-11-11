@@ -1,6 +1,7 @@
 package me.kitpvp.Kits;
 
 
+
 import me.kitpvp.SonicKit.Main;
 
 import org.bukkit.ChatColor;
@@ -16,7 +17,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
 
-public class PvP implements CommandExecutor, Listener {
+public class Viper implements CommandExecutor, Listener {
 	
 	
  	   
@@ -25,25 +26,18 @@ public class PvP implements CommandExecutor, Listener {
 
 	
 	private Main plugin;
-	public PvP(Main plugin) {
+	public Viper(Main plugin) {
 		this.plugin = plugin;
 	}
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(commandLabel.equalsIgnoreCase("pvp") && sender.hasPermission("KitPvP.pvp")){
+		if(commandLabel.equalsIgnoreCase("viper") && sender.hasPermission("KitPvP.viper")){
 			
 	
 			// Create variables
 			Player p = (Player) sender;
 			Inventory inv = p.getInventory();
-			
-			
-			
-			
-		
-	
-
 			
 	inv.clear();
 			
@@ -51,7 +45,8 @@ public class PvP implements CommandExecutor, Listener {
 			
 			// Clear Inventor
 				
-			
+
+	
 
 			
 			
@@ -61,7 +56,7 @@ public class PvP implements CommandExecutor, Listener {
 		        p.removePotionEffect(effect.getType());
 			
 			// Send the player a message
-			String pvp = plugin.getConfig().getString("pvpmsg");
+			String pvp = plugin.getConfig().getString("vipermsg");
 String prefixmsg = plugin.getConfig().getString("prefixmsg");
 			
 			p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + pvp);
@@ -108,7 +103,4 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
 }
 
             
-            
-         
-			
-			
+ 
