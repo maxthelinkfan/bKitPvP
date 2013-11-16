@@ -6,6 +6,7 @@ import me.kitpvp.Events.JoinMessage;
 import me.kitpvp.Events.KillEvent;
 import me.kitpvp.Events.Respawn;
 import me.kitpvp.Events.SlashSoup;
+import me.kitpvp.Help.Invsee;
 import me.kitpvp.Help.Kits;
 import me.kitpvp.Help.Main_Help;
 import me.kitpvp.Help.Pl;
@@ -64,6 +65,7 @@ public class Main extends JavaPlugin implements Listener {
 	private Dwarf executor22;
 	private SlashSoup executor23;
 	private Viper executor24;
+	private Invsee executor25;
 	
 	
 	
@@ -161,6 +163,11 @@ public class Main extends JavaPlugin implements Listener {
 	
 	executor24 = new Viper(this);
 	getCommand("viper").setExecutor(executor24);
+	
+	executor25 = new Invsee(this);
+	getCommand("seeinv").setExecutor(executor25);
+	
+	
 	
 	
 

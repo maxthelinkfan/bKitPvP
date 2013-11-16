@@ -98,4 +98,6 @@ commands:
      description: KitPvP.soup
    viper:
      description: Kitpvp.viper
+   seeinv:
+     description: Kitpvp.mod
    rules:
