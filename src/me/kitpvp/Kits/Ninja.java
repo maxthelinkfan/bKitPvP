@@ -55,7 +55,10 @@ public class Ninja implements CommandExecutor, Listener {
 			
 			
 		
-	
+			if(plugin.kit.contains(p.getName())) {
+				p.sendMessage(ChatColor.RED + "You can only use one kit per life!");
+			} else {
+			plugin.kit.add(p.getName());
 
 			
 	inv.clear();
@@ -115,7 +118,8 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
             
 		}
 		{
-		return false;
 	}
+}
+		return false;
 }
 }

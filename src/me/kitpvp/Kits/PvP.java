@@ -32,30 +32,13 @@ public class PvP implements CommandExecutor, Listener {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if(commandLabel.equalsIgnoreCase("pvp") && sender.hasPermission("KitPvP.pvp")){
-			
-	
-			// Create variables
 			Player p = (Player) sender;
-			Inventory inv = p.getInventory();
-			
-			
-			
-			
-		
-	
-
-			
-	inv.clear();
-			
-			
-			
-			// Clear Inventor
-				
-			
-
-			
-			
-			
+			Inventory inv = p.getInventory();		
+			if(plugin.kit.contains(p.getName())) {
+				p.sendMessage(ChatColor.RED + "You can only use one kit per life!");
+			} else {
+			plugin.kit.add(p.getName());
+			inv.clear();
 			//Remove Potion Effects
 			for (PotionEffect effect : p.getActivePotionEffects())
 		        p.removePotionEffect(effect.getType());
@@ -102,12 +85,11 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
             
 		}
 		{
-		return false;
 	}
 }
+		return false;
 }
-
-            
+}  
             
          
 			

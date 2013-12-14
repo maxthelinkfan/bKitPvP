@@ -26,7 +26,10 @@ public class Elite implements CommandExecutor {
 			// Create variables
 			Player p = (Player) sender;
 			Inventory inv = p.getInventory();
-			
+			if(plugin.kit.contains(p.getName())) {
+				p.sendMessage(ChatColor.RED + "You can only use one kit per life!");
+			} else {
+			plugin.kit.add(p.getName());
 			// Clear Inventory
 			inv.clear();
 			
@@ -70,8 +73,9 @@ public class Elite implements CommandExecutor {
             ((PlayerInventory)inv).setLeggings(legs);
             ((PlayerInventory)inv).setBoots(boots);
 		}
-		return false;
 	}
+		return false;
+}
 }
 
 	

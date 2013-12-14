@@ -100,4 +100,8 @@ commands:
      description: Kitpvp.viper
    seeinv:
      description: Kitpvp.mod
+   potpvp:
+     description: Kitpvp.pot
+   gm:
+     description: Kitpvp.gm
    rules:

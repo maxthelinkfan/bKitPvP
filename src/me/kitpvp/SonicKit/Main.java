@@ -1,12 +1,12 @@
 package me.kitpvp.SonicKit;
 
+import java.util.ArrayList;
+
 import me.kitpvp.Events.DeathEvent;
 import me.kitpvp.Events.HungerDisable;
 import me.kitpvp.Events.JoinMessage;
-import me.kitpvp.Events.KillEvent;
 import me.kitpvp.Events.Respawn;
 import me.kitpvp.Events.SlashSoup;
-import me.kitpvp.Help.Invsee;
 import me.kitpvp.Help.Kits;
 import me.kitpvp.Help.Main_Help;
 import me.kitpvp.Help.Pl;
@@ -28,9 +28,15 @@ import me.kitpvp.Kits.Urgal;
 import me.kitpvp.Kits.Viking;
 import me.kitpvp.Kits.Viper;
 import me.kitpvp.Kits.scout;
+import me.kitpvp.Mod.Invsee;
 import net.milkbowl.vault.economy.Economy;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -40,6 +46,14 @@ public class Main extends JavaPlugin implements Listener {
 	
 	SettingsManager settings = SettingsManager.getInstance();
 	
+	
+	
+	public void playerDeathAddMoney(Player deather, Player killer) {
+		  Main.economy.depositPlayer(killer.getName(), this.getConfig().getInt("cashonkill"));
+		  Bukkit.broadcastMessage(ChatColor.GRAY + "[" + this.getConfig().getString("prefixmsg") + "] " + ChatColor.AQUA + killer.getName() + " has slain " + deather.getName());
+			killer.sendMessage(ChatColor.GREEN + "You have received $" + this.getConfig().getInt("cashonkill") + ". Your new balance is $" + Main.economy.getBalance(killer.getName()));
+	  }
+		
 	
 	
 	// Define Command Executors
@@ -66,8 +80,18 @@ public class Main extends JavaPlugin implements Listener {
 	private SlashSoup executor23;
 	private Viper executor24;
 	private Invsee executor25;
+	private PotPvP executor26;
 	
-	
+	//ARRAY LISTS//
+	  public ArrayList<String> kit = new ArrayList<String>();
+	   ArrayList<String> archer = new ArrayList<String>(); 
+	   ArrayList<String> blaze = new ArrayList<String>();
+	   ArrayList<String> dwarf = new ArrayList<String>();
+	   ArrayList<String> elite = new ArrayList<String>();
+	   ArrayList<String> fisherman = new ArrayList<String>();
+	   ArrayList<String> grandpa = new ArrayList<String>();
+	   
+	   
 	
 	 public static Economy economy = null;
 	
@@ -85,7 +109,6 @@ public class Main extends JavaPlugin implements Listener {
 	private HungerDisable PlayerListener = new HungerDisable(this);
 	private JoinMessage PlayerListener4 = new JoinMessage(this);
 	private Respawn PlayerListener7 = new Respawn(this);
-	private KillEvent kill = new KillEvent(this);
 	private DeathEvent d = new DeathEvent(this);
 	
 	
@@ -100,7 +123,7 @@ public class Main extends JavaPlugin implements Listener {
 	executor = new PvP(this);
 	getCommand("pvp").setExecutor(executor);
 	
-	executor1 = new Archer(this);	
+	executor1 = new Archer(this);
 	getCommand("archer").setExecutor(executor1);
 	
 	executor2 = new Elite(this);
@@ -167,6 +190,9 @@ public class Main extends JavaPlugin implements Listener {
 	executor25 = new Invsee(this);
 	getCommand("seeinv").setExecutor(executor25);
 	
+	executor26 = new PotPvP(this);
+	getCommand("potpvp").setExecutor(executor26);
+	
 	
 	
 	
@@ -187,9 +213,6 @@ public class Main extends JavaPlugin implements Listener {
     
     PluginManager respawn = getServer().getPluginManager();
     respawn.registerEvents(this.PlayerListener7, this);
-    
-    PluginManager kill = getServer().getPluginManager();
-    kill.registerEvents(this.kill, this);
     
     PluginManager d = getServer().getPluginManager();
     d.registerEvents(this.d, this);

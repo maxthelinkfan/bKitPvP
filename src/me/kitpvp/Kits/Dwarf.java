@@ -29,7 +29,10 @@ public class Dwarf implements CommandExecutor {
 			// Create variables
 			Player p = (Player) sender;
 			Inventory inv = p.getInventory();
-			
+			if(plugin.kit.contains(p.getName())) {
+				p.sendMessage(ChatColor.RED + "You can only use one kit per life!");
+			} else {
+			plugin.kit.add(p.getName());
 			// Clear Inventory
 			inv.clear();
 			
@@ -90,6 +93,7 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
 		
 		
 		}
-		return false;
 		}
+		return false;
+}
 }

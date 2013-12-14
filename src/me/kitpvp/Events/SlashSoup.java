@@ -39,7 +39,6 @@ public class SlashSoup implements CommandExecutor, Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 10, 0));
 			
 			new BukkitRunnable() {
-          	  @Override
           	  public void run() {
           		  p.removePotionEffect(PotionEffectType.SLOW);
           		p.removePotionEffect(PotionEffectType.CONFUSION);

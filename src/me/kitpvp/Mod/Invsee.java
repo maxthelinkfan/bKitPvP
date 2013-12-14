@@ -1,4 +1,4 @@
-package me.kitpvp.Help;
+package me.kitpvp.Mod;
 
 import me.kitpvp.SonicKit.Main;
 
@@ -33,7 +33,8 @@ public class Invsee implements CommandExecutor {
 		    	  Player t = Bukkit.getServer().getPlayer(args[0]);
 		        if (args[0].equalsIgnoreCase(t.getName())) {
 		            Player p = (Player)sender;
-		            Inventory inv = Bukkit.createInventory(p, 35, ChatColor.BLUE + t.getName() + "'s inventory!");
+		            @SuppressWarnings("unused")
+					Inventory inv = Bukkit.createInventory(p, 35, ChatColor.BLUE + t.getName() + "'s inventory!");
 		            Inventory tinv = t.getInventory();
 		            
 		            p.openInventory(tinv);
