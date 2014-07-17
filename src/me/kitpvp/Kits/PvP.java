@@ -38,58 +38,16 @@ public class PvP implements CommandExecutor, Listener {
 				p.sendMessage(ChatColor.RED + "You can only use one kit per life!");
 			} else {
 			plugin.kit.add(p.getName());
-			inv.clear();
-			//Remove Potion Effects
-			for (PotionEffect effect : p.getActivePotionEffects())
-		        p.removePotionEffect(effect.getType());
+			plugin.givePvP(p);
 			
-			// Send the player a message
-			String pvp = plugin.getConfig().getString("pvpmsg");
-String prefixmsg = plugin.getConfig().getString("prefixmsg");
-			
-			p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + pvp);
-			
-			// List Items
-			ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
-			
-			
-			
-            // List armor
-            ItemStack helm = new ItemStack(Material.IRON_HELMET);
-            ItemStack chest = new ItemStack(Material.IRON_CHESTPLATE);
-            ItemStack legs = new ItemStack(Material.IRON_LEGGINGS);
-            ItemStack boots = new ItemStack(Material.IRON_BOOTS);
-            
-            // Enchant any items 
-            sword.addEnchantment(Enchantment.DAMAGE_ALL, 1);
-            
-            // Add any potion effects
-            
-            // Add items to inventory (weapons first.)
-            inv.addItem(sword);
-            
-         // List & add Soup (Make the "<=35>" less if you have more than 1 item)
-            
-         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_SOUP, 1);		    
-                     for(int i=1; i <=35; i++)
-                     	inv.addItem(getSoup);
-                     
-                     
-            
-            //Put armor on player
-            ((PlayerInventory) inv).setHelmet(helm);
-            ((PlayerInventory)inv).setChestplate(chest);
-            ((PlayerInventory)inv).setLeggings(legs);
-            ((PlayerInventory)inv).setBoots(boots);
-            
-            
-		}
-		{
-	}
+}
+		
 }
 		return false;
+	}
 }
-}  
+
+ 
             
          
 			

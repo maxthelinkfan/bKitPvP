@@ -8,21 +8,23 @@ rule7: Respect all staff
 rule8: No free for all in 1v1 arenas.
 rule9: No advertising other servers
 rule10: No combat logging
-pvpmsg: You have equiped the PvP kit!
-archermsg: You have equiped the Archer kit!
-elitemsg: You have equiped the Elite kit!
-blazemsg: You have equiped the Blaze kit!
-fishermanmsg: You have equiped the Fisherman kit!
-grandpamsg: You have equiped the Grandpa kit!
-knightmsg: You have equiped the Knight kit!
-scoutmsg: You have equiped the Scout kit!
-snipermsg: You have equiped the Sniper kit!
-switchermsg: You have equiped the Switcher kit!
-tankmsg: You have equiped the Tank kit!
-vikingmsg: You have equiped the Viking kit!
-minermsg: You have equiped the Miner kit!
-sonicmsg: You have equiped the Sonic kit!
-dwarfmsg: You have equiped the Dwarf kit!
-urgalmsg: You have equiped the Urgal kit!
+pvpmsg: You have equipped the PvP kit!
+archermsg: You have equipped the Archer kit!
+elitemsg: You have equipped the Elite kit!
+blazemsg: You have equipped the Blaze kit!
+fishermanmsg: You have equipped the Fisherman kit!
+grandpamsg: You have equipped the Grandpa kit!
+knightmsg: You have equipped the Knight kit!
+scoutmsg: You have equipped the Scout kit!
+snipermsg: You have equipped the Sniper kit!
+switchermsg: You have equipped the Switcher kit!
+tankmsg: You have equipped the Tank kit!
+vikingmsg: You have equipped the Viking kit!
+minermsg: You have equipped the Miner kit!
+sonicmsg: You have equipped the Sonic kit!
+dwarfmsg: You have equipped the Dwarf kit!
+urgalmsg: You have equipped the Urgal kit!
+votermsg: You have equipped the Voter kit!
+vipermsg: You have equipped the Viper kit!
 prefixmsg: MinecraftKits
 cashonkill: 30

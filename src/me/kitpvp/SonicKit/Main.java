@@ -4,9 +4,14 @@ import java.util.ArrayList;
 
 import me.kitpvp.Events.DeathEvent;
 import me.kitpvp.Events.HungerDisable;
+import me.kitpvp.Events.ItemDrop;
 import me.kitpvp.Events.JoinMessage;
 import me.kitpvp.Events.Respawn;
 import me.kitpvp.Events.SlashSoup;
+import me.kitpvp.GUI.CancelGUIEvent;
+import me.kitpvp.GUI.EliteGUI;
+import me.kitpvp.GUI.MainGUI;
+import me.kitpvp.GUI.PvPGUI;
 import me.kitpvp.Help.Kits;
 import me.kitpvp.Help.Main_Help;
 import me.kitpvp.Help.Pl;
@@ -14,6 +19,8 @@ import me.kitpvp.Help.Pl2;
 import me.kitpvp.Help.Rules;
 import me.kitpvp.Kits.Archer;
 import me.kitpvp.Kits.Blaze;
+import me.kitpvp.Kits.CClear;
+import me.kitpvp.Kits.CSpleef;
 import me.kitpvp.Kits.Dwarf;
 import me.kitpvp.Kits.Elite;
 import me.kitpvp.Kits.Fisherman;
@@ -27,17 +34,23 @@ import me.kitpvp.Kits.Tank;
 import me.kitpvp.Kits.Urgal;
 import me.kitpvp.Kits.Viking;
 import me.kitpvp.Kits.Viper;
+import me.kitpvp.Kits.Voter;
 import me.kitpvp.Kits.scout;
 import me.kitpvp.Mod.Invsee;
 import net.milkbowl.vault.economy.Economy;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
 
 public class Main extends JavaPlugin implements Listener {
 	
@@ -51,7 +64,74 @@ public class Main extends JavaPlugin implements Listener {
 		  Bukkit.broadcastMessage(ChatColor.GRAY + "[" + this.getConfig().getString("prefixmsg") + "] " + ChatColor.AQUA + killer.getName() + " has slain " + deather.getName());
 			killer.sendMessage(ChatColor.GREEN + "You have received $" + this.getConfig().getInt("cashonkill") + ". Your new balance is $" + Main.economy.getBalance(killer.getName()));
 	  }
+	
+	public void playerShotAddMoney(Player deather, Player killer) {
+		Main.economy.depositPlayer(killer.getName(), this.getConfig().getInt("cashonkill"));
+		  Bukkit.broadcastMessage(ChatColor.GRAY + "[" + this.getConfig().getString("prefixmsg") + "] " + ChatColor.AQUA + killer.getName() + " has shot " + deather.getName());
+			killer.sendMessage(ChatColor.GREEN + "You have received $" + this.getConfig().getInt("cashonkill") + ". Your new balance is $" + Main.economy.getBalance(killer.getName()));
+	}
+	
+	public void givePvP(Player p) {
+		Inventory inv = p.getInventory();
+		ItemStack PvPSword = new ItemStack(Material.DIAMOND_SWORD);
+		ItemStack PvPSoup = new ItemStack(Material.MUSHROOM_SOUP);
+		ItemStack PvPHead = new ItemStack(Material.IRON_HELMET);
+		ItemStack PvPChest = new ItemStack(Material.IRON_CHESTPLATE);
+		ItemStack PvPLegs = new ItemStack(Material.IRON_LEGGINGS);
+		ItemStack PvPBoots = new ItemStack(Material.IRON_BOOTS);
+		String pvp = getConfig().getString("pvpmsg");
+		String prefixmsg = getConfig().getString("prefixmsg");
+		inv.clear();
+		for (PotionEffect effect : p.getActivePotionEffects())
+	        p.removePotionEffect(effect.getType());
+		PvPSword.addEnchantment(Enchantment.DAMAGE_ALL, 1);
+		inv.addItem(PvPSword);
+		for(int i=1; i <=35; i++)
+         	inv.addItem(PvPSoup);
+		p.getInventory().setHelmet(PvPHead);
+		p.getInventory().setChestplate(PvPChest);
+		p.getInventory().setLeggings(PvPLegs);
+		p.getInventory().setBoots(PvPBoots);
+		p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + pvp);
 		
+				
+	}
+	
+	public void giveArcher(Player p) {
+		
+	}
+	
+	public void giveElite(Player p) {
+		Inventory inv = p.getInventory();
+		ItemStack PvPSword = new ItemStack(Material.DIAMOND_SWORD);
+		ItemStack PvPSoup = new ItemStack(Material.MUSHROOM_SOUP);
+		ItemStack PvPHead = new ItemStack(Material.IRON_HELMET);
+		ItemStack PvPChest = new ItemStack(Material.IRON_CHESTPLATE);
+		ItemStack PvPLegs = new ItemStack(Material.IRON_LEGGINGS);
+		ItemStack PvPBoots = new ItemStack(Material.IRON_BOOTS);
+		String pvp = getConfig().getString("elitemsg");
+		String prefixmsg = getConfig().getString("prefixmsg");
+		inv.clear();
+		for (PotionEffect effect : p.getActivePotionEffects())
+	        p.removePotionEffect(effect.getType());
+		inv.addItem(PvPSword);
+		for(int i=1; i <=35; i++)
+         	inv.addItem(PvPSoup);
+		p.getInventory().setHelmet(PvPHead);
+		p.getInventory().setChestplate(PvPChest);
+		p.getInventory().setLeggings(PvPLegs);
+		p.getInventory().setBoots(PvPBoots);
+		p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + pvp);
+		
+				
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	// Define Command Executors
@@ -108,6 +188,7 @@ public class Main extends JavaPlugin implements Listener {
 	private JoinMessage PlayerListener4 = new JoinMessage(this);
 	private Respawn PlayerListener7 = new Respawn(this);
 	private DeathEvent d = new DeathEvent(this);
+	private MainGUI mgui = new MainGUI(this);
 	
 	
 	public void onEnable() {
@@ -191,6 +272,11 @@ public class Main extends JavaPlugin implements Listener {
 	executor26 = new PotPvP(this);
 	getCommand("potpvp").setExecutor(executor26);
 	
+	getCommand("voter").setExecutor(new Voter(this));
+	
+	getCommand("cspleef").setExecutor(new CSpleef(this));
+	
+	getCommand("cclear").setExecutor(new CClear(this));
 	
 	
 	
@@ -214,6 +300,19 @@ public class Main extends JavaPlugin implements Listener {
     
     PluginManager d = getServer().getPluginManager();
     d.registerEvents(this.d, this);
+    
+    PluginManager mgui = getServer().getPluginManager();
+    mgui.registerEvents(this.mgui, this);
+    
+    
+   
+    Bukkit.getServer().getPluginManager().registerEvents(new ItemDrop(this), this);
+    
+    Bukkit.getServer().getPluginManager().registerEvents(new PvPGUI(this), this);
+    
+    Bukkit.getServer().getPluginManager().registerEvents(new EliteGUI(this), this);
+    
+    Bukkit.getServer().getPluginManager().registerEvents(new CancelGUIEvent(this), this);
     
     
     

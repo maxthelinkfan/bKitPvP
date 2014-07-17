@@ -1,0 +1,29 @@
+package me.kitpvp.Help;
+
+import me.kitpvp.SonicKit.Main;
+
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+
+public class Plugins implements Listener {
+	
+	private Main plugin;
+	public Plugins(Main plugin) {
+		this.plugin = plugin;
+	}
+	
+	@EventHandler
+	public void onPlayerRunPluginsCMD(PlayerCommandPreprocessEvent e) {
+		Player p = e.getPlayer();
+		String cmd = e.getMessage();		
+		if(cmd.equalsIgnoreCase("plugins")) {
+			p.sendMessage(ChatColor.RED + "Ehem, uh no.");
+			
+		}
+		
+	}
+
+}
