@@ -118,4 +118,6 @@ commands:
      description: Gives spleef.
    cclear:
      description: CClear
+   cbspleef:
+     description: Gives bow spleef kit!
    rules:
