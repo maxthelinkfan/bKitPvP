@@ -3,7 +3,6 @@ package me.kitpvp.GUI;
 import me.kitpvp.SonicKit.Main;
 
 import org.bukkit.ChatColor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
