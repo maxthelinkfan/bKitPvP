@@ -8,10 +8,6 @@ import me.kitpvp.Events.ItemDrop;
 import me.kitpvp.Events.JoinMessage;
 import me.kitpvp.Events.Respawn;
 import me.kitpvp.Events.SlashSoup;
-import me.kitpvp.GUI.CancelGUIEvent;
-import me.kitpvp.GUI.EliteGUI;
-import me.kitpvp.GUI.MainGUI;
-import me.kitpvp.GUI.PvPGUI;
 import me.kitpvp.Help.Kits;
 import me.kitpvp.Help.Main_Help;
 import me.kitpvp.Help.Pl;
@@ -92,9 +88,7 @@ public class Main extends JavaPlugin implements Listener {
 		p.getInventory().setChestplate(PvPChest);
 		p.getInventory().setLeggings(PvPLegs);
 		p.getInventory().setBoots(PvPBoots);
-		p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + pvp);
-		
-				
+		p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + pvp);			
 	}
 	
 	public void giveArcher(Player p) {
@@ -188,7 +182,6 @@ public class Main extends JavaPlugin implements Listener {
 	private JoinMessage PlayerListener4 = new JoinMessage(this);
 	private Respawn PlayerListener7 = new Respawn(this);
 	private DeathEvent d = new DeathEvent(this);
-	private MainGUI mgui = new MainGUI(this);
 	
 	
 	public void onEnable() {
@@ -301,18 +294,6 @@ public class Main extends JavaPlugin implements Listener {
     PluginManager d = getServer().getPluginManager();
     d.registerEvents(this.d, this);
     
-    PluginManager mgui = getServer().getPluginManager();
-    mgui.registerEvents(this.mgui, this);
-    
-    
-   
-    Bukkit.getServer().getPluginManager().registerEvents(new ItemDrop(this), this);
-    
-    Bukkit.getServer().getPluginManager().registerEvents(new PvPGUI(this), this);
-    
-    Bukkit.getServer().getPluginManager().registerEvents(new EliteGUI(this), this);
-    
-    Bukkit.getServer().getPluginManager().registerEvents(new CancelGUIEvent(this), this);
     
     
     
