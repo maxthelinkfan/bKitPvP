@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import me.kitpvp.Events.DeathEvent;
 import me.kitpvp.Events.HungerDisable;
-import me.kitpvp.Events.ItemDrop;
 import me.kitpvp.Events.JoinMessage;
 import me.kitpvp.Events.Respawn;
 import me.kitpvp.Events.SlashSoup;
@@ -15,6 +14,7 @@ import me.kitpvp.Help.Pl2;
 import me.kitpvp.Help.Rules;
 import me.kitpvp.Kits.Archer;
 import me.kitpvp.Kits.Blaze;
+import me.kitpvp.Kits.CBSpleef;
 import me.kitpvp.Kits.CClear;
 import me.kitpvp.Kits.CSpleef;
 import me.kitpvp.Kits.Dwarf;
@@ -270,6 +270,8 @@ public class Main extends JavaPlugin implements Listener {
 	getCommand("cspleef").setExecutor(new CSpleef(this));
 	
 	getCommand("cclear").setExecutor(new CClear(this));
+	
+	getCommand("cbspleef").setExecutor(new CBSpleef(this));
 	
 	
 	
