@@ -22,10 +22,8 @@ public class JoinMessage implements Listener{
         	// Define Variables
         	Player p = e.getPlayer();
         	p.sendMessage(ChatColor.AQUA + "Welcome to the Minecraft-Kits!");
-        	// p.sendMessage(ChatColor.AQUA + "Visit " + ChatColor.BLUE + "www.sonicpvp.enjin.com" + ChatColor.AQUA + " for news and information.");
-        	p.sendMessage(ChatColor.AQUA + "Use " + ChatColor.WHITE + "/help " + ChatColor.AQUA + "for a list of commands.");
-        	p.sendMessage(ChatColor.GREEN + "VIP" + ChatColor.AQUA + ", " + ChatColor.AQUA + "MVP" + ChatColor.AQUA + ", " + ChatColor.DARK_RED + "PRO " + ChatColor.AQUA + "&" + ChatColor.DARK_PURPLE + " Titan " + ChatColor.AQUA + "Packages now availble. See bit.ly/BrawlBuy for details.");
-        	p.sendMessage(ChatColor.RED + "NO CHEATING! FLYING/XRAY/ETC = BAN! YOU HAVE BEEN WARNED!");
+        	p.sendMessage(ChatColor.AQUA + "Do " + ChatColor.RED + "/help " + ChatColor.AQUA + "for a list of commands.");
+        	p.sendMessage(ChatColor.RED + "EXCLUSIVE! For only ONE WEEK we will be selling VIP/MVP/PRO, do /buy for more information.");
         	
         	
         	
