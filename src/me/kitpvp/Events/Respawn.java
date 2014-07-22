@@ -37,7 +37,7 @@ public class Respawn implements Listener{
         	ItemMeta mgui = gui.getItemMeta();
         	mgui.setDisplayName(ChatColor.GREEN + "Select a kit!");
         	gui.setItemMeta(mgui);
-        	p.getInventory().addItem(gui);
+        	// p.getInventory().addItem(gui);
         	
       
         			

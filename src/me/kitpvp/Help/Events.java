@@ -8,32 +8,30 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Main_Help implements CommandExecutor {
+public class Events implements CommandExecutor {
 	
-	@SuppressWarnings("unused")
 	private Main plugin;
-	public Main_Help(Main plugin) {
+	public Events(Main plugin) {
 		this.plugin = plugin;
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(commandLabel.equalsIgnoreCase("help")){
+		if(commandLabel.equalsIgnoreCase("rules")){
 			
 			//Defines Variables
 			Player p = (Player) sender;
 			
 			String server = plugin.getConfig().getString("prefixmsg");
 			
-			//Send message
-			p.sendMessage(ChatColor.GOLD + server + ChatColor.WHITE + " Help");
+			p.sendMessage(ChatColor.GOLD + server + ChatColor.WHITE + " Events");
 			p.sendMessage(ChatColor.GRAY + "====================================================");
-			p.sendMessage(ChatColor.GOLD + "/kits" + ChatColor.WHITE + " - Find out what kits you have!");
-			p.sendMessage(ChatColor.GOLD + "/who" + ChatColor.WHITE + " - List all the online players!");
-			p.sendMessage(ChatColor.GOLD + "/rules" + ChatColor.WHITE + " - Lists all the rules!");
-			p.sendMessage(ChatColor.GOLD + "/events" + ChatColor.WHITE + " - Lists all the events on the server!");
+			p.sendMessage(ChatColor.GOLD + "LMS - A battle until one player is left! ");
+			p.sendMessage(ChatColor.GOLD + "KTK - Kill the King   ");
+			p.sendMessage(ChatColor.GOLD + "Leaf Decay - ");
+			p.sendMessage(ChatColor.GOLD + "Brackets - ");
+			p.sendMessage(ChatColor.GOLD + "Cannons - ");
 			p.sendMessage(ChatColor.GRAY + "====================================================");
 		}
 		return false;
 	}
 }
-		
