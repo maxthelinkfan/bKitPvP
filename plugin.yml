@@ -120,4 +120,6 @@ commands:
      description: CClear
    cbspleef:
      description: Gives bow spleef kit!
+   events:
+     description: Events
    rules:

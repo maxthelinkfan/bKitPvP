@@ -16,7 +16,7 @@ public class Events implements CommandExecutor {
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(commandLabel.equalsIgnoreCase("rules")){
+		if(commandLabel.equalsIgnoreCase("events")){
 			
 			//Defines Variables
 			Player p = (Player) sender;

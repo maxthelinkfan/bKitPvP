@@ -7,6 +7,7 @@ import me.kitpvp.Events.HungerDisable;
 import me.kitpvp.Events.JoinMessage;
 import me.kitpvp.Events.Respawn;
 import me.kitpvp.Events.SlashSoup;
+import me.kitpvp.Help.Events;
 import me.kitpvp.Help.Kits;
 import me.kitpvp.Help.Main_Help;
 import me.kitpvp.Help.Pl;
@@ -272,6 +273,8 @@ public class Main extends JavaPlugin implements Listener {
 	getCommand("cclear").setExecutor(new CClear(this));
 	
 	getCommand("cbspleef").setExecutor(new CBSpleef(this));
+	
+	getCommand("events").setExecutor(new Events(this));
 	
 	
 	

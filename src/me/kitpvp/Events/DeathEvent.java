@@ -22,7 +22,7 @@ public class DeathEvent implements Listener{
         public void onPlayerInteract(PlayerDeathEvent e){     
         	Player p = e.getEntity();
         	Player t = p.getKiller();
-        //	e.getDrops().clear();           
+        	e.getDrops().clear();           
         	plugin.kit.remove(p.getName());
         	if(e.getEntity() instanceof Player) {
         		if(e.getDeathMessage().contains("slain")) {
