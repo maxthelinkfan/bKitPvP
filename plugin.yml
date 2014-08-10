@@ -122,4 +122,6 @@ commands:
      description: Gives bow spleef kit!
    events:
      description: Events
+    ktk:
+     description: Kill the King Kit!
    rules:

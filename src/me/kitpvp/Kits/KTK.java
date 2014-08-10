@@ -3,6 +3,7 @@ package me.kitpvp.Kits;
 import me.kitpvp.SonicKit.Main;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,15 +16,15 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class Urgal implements CommandExecutor {
+public class KTK implements CommandExecutor {
 	
 	private Main plugin;
-	public Urgal(Main plugin) {
+	public KTK(Main plugin) {
 		this.plugin = plugin;
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(commandLabel.equalsIgnoreCase("urgal") && sender.hasPermission("KitPvP.urgal")){
+		if(commandLabel.equalsIgnoreCase("ktk") && sender.hasPermission("KitPvP.ktk")){
 			
 			// Create variables
 			Player p = (Player) sender;
@@ -40,31 +41,43 @@ public class Urgal implements CommandExecutor {
 		        p.removePotionEffect(effect.getType());
 			
 			// Send the player a message
-			String urgal = plugin.getConfig().getString("urgalmsg");
-String prefixmsg = plugin.getConfig().getString("prefixmsg");
 			
-			p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + urgal);
+			
+			p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "MinecraftKits" + ChatColor.GOLD + "] " + ChatColor.GOLD + "You have equipped the KTK kit!");
 			
 			// List Items
-			ItemStack sword = new ItemStack(Material.WOOD_SWORD);
+			ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
 			
 			
 			
             // List armor
-            ItemStack helm = new ItemStack(Material.LEATHER_HELMET);
-            ItemStack chest = new ItemStack(Material.LEATHER_CHESTPLATE);
-            ItemStack legs = new ItemStack(Material.LEATHER_LEGGINGS);
-            ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
+			ItemStack helm = new ItemStack(Material.DIAMOND_HELMET);
+			ItemStack chest = new ItemStack(Material.DIAMOND_HELMET);
+            ItemStack legs = new ItemStack(Material.DIAMOND_LEGGINGS);
+            ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
+            
             
             // Enchant any items 
-            sword.addEnchantment(Enchantment.DAMAGE_ALL, 2);
-            helm.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
-            chest.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
-            legs.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
-            boots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
+            sword.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 10);
+            sword.addUnsafeEnchantment(Enchantment.KNOCKBACK, 15);
+            sword.addUnsafeEnchantment(Enchantment.DURABILITY, 69);
+            helm.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
+            helm.addUnsafeEnchantment(Enchantment.THORNS, 5);
+            helm.addUnsafeEnchantment(Enchantment.DURABILITY, 69);
+            chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
+            chest.addUnsafeEnchantment(Enchantment.THORNS, 5);
+            chest.addUnsafeEnchantment(Enchantment.DURABILITY, 69);
+            legs.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
+            legs.addUnsafeEnchantment(Enchantment.THORNS, 5);
+            legs.addUnsafeEnchantment(Enchantment.DURABILITY, 69);
+            boots.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
+            boots.addUnsafeEnchantment(Enchantment.THORNS, 5);
+            boots.addUnsafeEnchantment(Enchantment.DURABILITY, 69);
             
             // Add any potion effects
-            p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 100000000, 1));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 999999999, 1));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 9999999, 1));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 999999, 1));
             
             // Add items to inventory (weapons first.)
             inv.addItem(sword);

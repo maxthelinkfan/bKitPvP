@@ -22,6 +22,7 @@ import me.kitpvp.Kits.Dwarf;
 import me.kitpvp.Kits.Elite;
 import me.kitpvp.Kits.Fisherman;
 import me.kitpvp.Kits.Grandpa;
+import me.kitpvp.Kits.KTK;
 import me.kitpvp.Kits.Knight;
 import me.kitpvp.Kits.PvP;
 import me.kitpvp.Kits.Sniper;
@@ -154,6 +155,7 @@ public class Main extends JavaPlugin implements Listener {
 	private Viper executor24;
 	private Invsee executor25;
 	private PotPvP executor26;
+	private KTK executor27;
 	
 	//ARRAY LISTS//
 	  public ArrayList<String> kit = new ArrayList<String>();
@@ -265,6 +267,9 @@ public class Main extends JavaPlugin implements Listener {
 	
 	executor26 = new PotPvP(this);
 	getCommand("potpvp").setExecutor(executor26);
+	
+	executor27 = new KTK(this);
+	getCommand("ktk").setExecutor(executor27);
 	
 	getCommand("voter").setExecutor(new Voter(this));
 	
