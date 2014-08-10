@@ -51,10 +51,10 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
 			
 			
             // List armor
-            ItemStack helm = new ItemStack(Material.AIR);
+            ItemStack helm = new ItemStack(Material.DIAMOND_HELMET);
             ItemStack chest = new ItemStack(Material.AIR);
             ItemStack legs = new ItemStack(Material.AIR);
-            ItemStack boots = new ItemStack(Material.AIR);
+            ItemStack boots = new ItemStack(Material.GOLD_BOOTS);
             
             // Enchant any items 
             sword.addEnchantment(Enchantment.DAMAGE_ALL, 3);
@@ -62,6 +62,14 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
             
             // Add any potion effects
             p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 999999999, 2));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 9999999, 1));
+            
+            //Add any enchanetments 
+            
+           helm.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+           helm.addEnchantment(Enchantment.DURABILITY, 2);
+           boots.addEnchantment(Enchantment.THORNS, 2);
+           boots.addEnchantment(Enchantment.DURABILITY, 3);
             
             // Add items to inventory (weapons first.)
             inv.addItem(sword);
