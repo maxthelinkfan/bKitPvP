@@ -47,7 +47,7 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
 			
 			// List Items
 			ItemStack sword = new ItemStack(Material.IRON_SWORD);
-			ItemStack snowball = new ItemStack(Material.SNOW_BALL, 32);		    
+			ItemStack snowball = new ItemStack(Material.SNOWBALL, 32);		    
             						
 			
             // List armor
@@ -71,7 +71,7 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
             inv.addItem(snowball);
             
          // List & add Soup (Make the "<=35>" less if you have more than 1 item)
-         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_SOUP, 1);		    
+         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_STEW, 1);		    
                      for(int i=1; i <=34; i++)
                      	inv.addItem(getSoup);
                     

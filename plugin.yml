@@ -1,68 +1,6 @@
-name:  bKitPvP
-main:  me.kitpvp.SonicKit.Main
-version:  1.1
-permissions:
-    kitpvp.default:
-       children:
-           kitpvp.pvp:true
-           kitpvp.archer:true
-           kitpvp.elite:true
-           kitpvp.knight:true
-           kitpvp.viking:true
-           kitpvp.switcher:true
-    kitpvp.vip:
-       children:
-           kitpvp.pvp: true
-           kitpvp.archer: true
-           kitpvp.elite: true
-           kitpvp.knight: true
-           kitpvp.scout: true
-           kitpvp.grandpa: true
-    kitpvp.mvp:
-       children:
-           kitpvp.pvp: true
-           kitpvp.archer: true
-           kitpvp.elite: true
-           kitpvp.knight: true
-           kitpvp.scout: true
-           kitpvp.grandpa: true
-           kitpvp.switcher: true
-           kitpvp.viking: true
-           kitpvp.urgal: true
-           kitpvp.dwarf: true
-    kitpvp.pro:
-       children:
-           kitpvp.pvp: true
-           kitpvp.archer: true
-           kitpvp.elite: true
-           kitpvp.knight: true
-           kitpvp.scout: true
-           kitpvp.grandpa: true
-           kitpvp.switcher: true
-           kitpvp.viking: true
-           kitpvp.urgal: true
-           kitpvp.dwarf: true
-           kitpvp.sniper: true
-           kitpvp.sonic: true
-    kitpvp.titan:
-       description: Use all MOTD commands.
-       children:
-           kitpvp.blaze: true
-           kitpvp.pvp: true
-           kitpvp.archer: true
-           kitpvp.elite: true
-           kitpvp.knight: true
-           kitpvp.tank: true
-           kitpvp.fisherman: true
-           kitpvp.switcher: true
-           kitpvp.sniper: true
-           kitpvp.grandpa: true
-           kitpvp.viking: true
-           kitpvp.scout: true
-           kitpvp.sonic: true
-           kitpvp.urgal: true
-           kitpvp.dwarf: true
-           kitpvp.kits: true
+name: mKits
+main: me.kitpvp.SonicKit.Main
+version: 1.0
 commands:
    pvp:
      description: KitPvP.pvp
@@ -106,22 +44,13 @@ commands:
      description: KitPvP.soup
    viper:
      description: Kitpvp.viper
-   seeinv:
-     description: Kitpvp.mod
-   potpvp:
-     description: Kitpvp.pot
    gm:
      description: Kitpvp.gm
    voter:
      description: Received from Voting
-   cspleef:
-     description: Gives spleef.
-   cclear:
-     description: CClear
-   cbspleef:
-     description: Gives bow spleef kit!
    events:
      description: Events
-    ktk:
+   ktk:
      description: Kill the King Kit!
    rules:
+  

@@ -3,7 +3,7 @@ package me.kitpvp.Kits;
 import me.kitpvp.SonicKit.Main;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Color;
+
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -83,7 +83,7 @@ public class KTK implements CommandExecutor {
             inv.addItem(sword);
             
          // List & add Soup (Make the "<=35>" less if you have more than 1 item)
-         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_SOUP, 1);		    
+         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_STEW, 1);		    
                      for(int i=1; i <=35; i++)
                      	inv.addItem(getSoup);
                      

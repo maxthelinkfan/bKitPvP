@@ -51,10 +51,10 @@ public class Blaze implements CommandExecutor {
 			
 			
             // List armor
-            ItemStack helm = new ItemStack(Material.GOLD_HELMET);
-            ItemStack chest = new ItemStack(Material.GOLD_CHESTPLATE);
-            ItemStack legs = new ItemStack(Material.GOLD_LEGGINGS);
-            ItemStack boots = new ItemStack(Material.GOLD_BOOTS);
+            ItemStack helm = new ItemStack(Material.GOLDEN_HELMET);
+            ItemStack chest = new ItemStack(Material.GOLDEN_CHESTPLATE);
+            ItemStack legs = new ItemStack(Material.GOLDEN_LEGGINGS);
+            ItemStack boots = new ItemStack(Material.GOLDEN_BOOTS);
             
             // Enchant any items 
             sword.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 10);
@@ -71,7 +71,7 @@ public class Blaze implements CommandExecutor {
             inv.addItem(sword);
             
          // List & add Soup (Make the "<=35>" less if you have more than 1 item)
-         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_SOUP, 1);		    
+         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_STEW, 1);		    
                      for(int i=1; i <=35; i++)
                      	inv.addItem(getSoup);
                      

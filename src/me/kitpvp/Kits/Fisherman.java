@@ -51,7 +51,7 @@ public class Fisherman implements CommandExecutor {
 			
             // List armor
             ItemStack helm = new ItemStack(Material.IRON_HELMET);
-            ItemStack chest = new ItemStack(Material.GOLD_CHESTPLATE);
+            ItemStack chest = new ItemStack(Material.GOLDEN_CHESTPLATE);
             ItemStack legs = new ItemStack(Material.CHAINMAIL_LEGGINGS);
             ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
             
@@ -68,7 +68,7 @@ public class Fisherman implements CommandExecutor {
             inv.addItem(wepon);
             
          // List & add Soup (Make the "<=35>" less if you have more than 1 item)
-         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_SOUP, 1);		    
+         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_STEW, 1);		    
                      for(int i=1; i <=35; i++)
                      	inv.addItem(getSoup);
                      

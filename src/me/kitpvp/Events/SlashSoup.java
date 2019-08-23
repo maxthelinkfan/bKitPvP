@@ -44,7 +44,7 @@ public class SlashSoup implements CommandExecutor, Listener {
           		p.removePotionEffect(PotionEffectType.CONFUSION);
           		p.removePotionEffect(PotionEffectType.BLINDNESS);
           		
-          		ItemStack getSoup = new ItemStack(Material.MUSHROOM_SOUP, 1);		    
+          		ItemStack getSoup = new ItemStack(Material.MUSHROOM_STEW, 1);		    
                 for(int i=1; i <=8; i++)
                  	inv.addItem(getSoup);
           	  }

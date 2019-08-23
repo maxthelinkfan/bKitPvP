@@ -64,7 +64,7 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
             inv.addItem(sword);
             
          // List & add Soup (Make the "<=35>" less if you have more than 1 item)
-         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_SOUP, 1);		    
+         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_STEW, 1);		    
                      for(int i=1; i <=35; i++)
                      	inv.addItem(getSoup);
                      

@@ -55,7 +55,7 @@ public class Archer implements CommandExecutor {
             // List armor
             ItemStack helm = new ItemStack(Material.LEATHER_HELMET);
             ItemStack chest = new ItemStack(Material.CHAINMAIL_CHESTPLATE);
-            ItemStack legs = new ItemStack(Material.GOLD_LEGGINGS);
+            ItemStack legs = new ItemStack(Material.GOLDEN_LEGGINGS);
             ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
             
             // Enchant any items 
@@ -71,7 +71,7 @@ public class Archer implements CommandExecutor {
             inv.addItem(bow);
             
          // List & add Soup (Make the "<=35>" less if you have more than 1 item)
-         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_SOUP, 1);		    
+         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_STEW, 1);		    
                      for(int i=1; i <=33; i++)
                      	inv.addItem(getSoup);
                      inv.addItem(arrow);

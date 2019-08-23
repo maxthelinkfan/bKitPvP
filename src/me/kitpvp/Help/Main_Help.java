@@ -10,7 +10,6 @@ import org.bukkit.entity.Player;
 
 public class Main_Help implements CommandExecutor {
 	
-	@SuppressWarnings("unused")
 	private Main plugin;
 	public Main_Help(Main plugin) {
 		this.plugin = plugin;

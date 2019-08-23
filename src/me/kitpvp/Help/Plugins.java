@@ -10,9 +10,7 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 public class Plugins implements Listener {
 	
-	private Main plugin;
 	public Plugins(Main plugin) {
-		this.plugin = plugin;
 	}
 	
 	@EventHandler

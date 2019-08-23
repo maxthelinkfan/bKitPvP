@@ -9,7 +9,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.Inventory;
 
 
 public class PvP implements CommandExecutor, Listener {
@@ -28,8 +27,7 @@ public class PvP implements CommandExecutor, Listener {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if(commandLabel.equalsIgnoreCase("pvp") && sender.hasPermission("KitPvP.pvp")){
-			Player p = (Player) sender;
-			Inventory inv = p.getInventory();		
+			Player p = (Player) sender;		
 			if(plugin.kit.contains(p.getName())) {
 				p.sendMessage(ChatColor.RED + "You can only use one kit per life!");
 			} else {

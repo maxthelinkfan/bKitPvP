@@ -46,7 +46,7 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
 			p.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "" + prefixmsg + ChatColor.GOLD + "] " + ChatColor.GOLD + " " + scout);
 			
 			// List Items
-			ItemStack sword = new ItemStack(Material.GOLD_SWORD);
+			ItemStack sword = new ItemStack(Material.GOLDEN_SWORD);
 			
 			
 			
@@ -54,7 +54,7 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
             ItemStack helm = new ItemStack(Material.DIAMOND_HELMET);
             ItemStack chest = new ItemStack(Material.AIR);
             ItemStack legs = new ItemStack(Material.AIR);
-            ItemStack boots = new ItemStack(Material.GOLD_BOOTS);
+            ItemStack boots = new ItemStack(Material.GOLDEN_BOOTS);
             
             // Enchant any items 
             sword.addEnchantment(Enchantment.DAMAGE_ALL, 3);
@@ -75,7 +75,7 @@ String prefixmsg = plugin.getConfig().getString("prefixmsg");
             inv.addItem(sword);
             
          // List & add Soup (Make the "<=35>" less if you have more than 1 item)
-         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_SOUP, 1);		    
+         			ItemStack getSoup = new ItemStack(Material.MUSHROOM_STEW, 1);		    
                      for(int i=1; i <=35; i++)
                      	inv.addItem(getSoup);
                      

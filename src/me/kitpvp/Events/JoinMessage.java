@@ -21,9 +21,9 @@ public class JoinMessage implements Listener{
         {
         	// Define Variables
         	Player p = e.getPlayer();
-        	p.sendMessage(ChatColor.AQUA + "Welcome to the Minecraft-Kits!");
+        	String server = plugin.getConfig().getString("prefixmsg");
+        	p.sendMessage(ChatColor.AQUA + "Welcome to " + server);
         	p.sendMessage(ChatColor.AQUA + "Do " + ChatColor.RED + "/help " + ChatColor.AQUA + "for a list of commands.");
-        	p.sendMessage(ChatColor.RED + "EXCLUSIVE! For only ONE WEEK we will be selling VIP/MVP/PRO, do /buy for more information.");
         	
         	
         	

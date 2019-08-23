@@ -15,9 +15,6 @@ import me.kitpvp.Help.Pl2;
 import me.kitpvp.Help.Rules;
 import me.kitpvp.Kits.Archer;
 import me.kitpvp.Kits.Blaze;
-import me.kitpvp.Kits.CBSpleef;
-import me.kitpvp.Kits.CClear;
-import me.kitpvp.Kits.CSpleef;
 import me.kitpvp.Kits.Dwarf;
 import me.kitpvp.Kits.Elite;
 import me.kitpvp.Kits.Fisherman;
@@ -34,10 +31,9 @@ import me.kitpvp.Kits.Viking;
 import me.kitpvp.Kits.Viper;
 import me.kitpvp.Kits.Voter;
 import me.kitpvp.Kits.scout;
-import me.kitpvp.Mod.Invsee;
+
 import net.milkbowl.vault.economy.Economy;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -56,23 +52,24 @@ public class Main extends JavaPlugin implements Listener {
 	SettingsManager settings = SettingsManager.getInstance();
 	
 	
-	
-	public void playerDeathAddMoney(Player deather, Player killer) {
-		  Main.economy.depositPlayer(killer.getName(), this.getConfig().getInt("cashonkill"));
-		  Bukkit.broadcastMessage(ChatColor.GRAY + "[" + this.getConfig().getString("prefixmsg") + "] " + ChatColor.AQUA + killer.getName() + " has slain " + deather.getName());
-			killer.sendMessage(ChatColor.GREEN + "You have received $" + this.getConfig().getInt("cashonkill") + ". Your new balance is $" + Main.economy.getBalance(killer.getName()));
-	  }
-	
-	public void playerShotAddMoney(Player deather, Player killer) {
-		Main.economy.depositPlayer(killer.getName(), this.getConfig().getInt("cashonkill"));
-		  Bukkit.broadcastMessage(ChatColor.GRAY + "[" + this.getConfig().getString("prefixmsg") + "] " + ChatColor.AQUA + killer.getName() + " has shot " + deather.getName());
-			killer.sendMessage(ChatColor.GREEN + "You have received $" + this.getConfig().getInt("cashonkill") + ". Your new balance is $" + Main.economy.getBalance(killer.getName()));
-	}
+	 public static Economy economy = null;
+
+
+	    private boolean setupEconomy()
+	    {
+	        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
+	        if (economyProvider != null) {
+	            economy = economyProvider.getProvider();
+	        }
+
+	        return (economy != null);
+	    }
+
 	
 	public void givePvP(Player p) {
 		Inventory inv = p.getInventory();
 		ItemStack PvPSword = new ItemStack(Material.DIAMOND_SWORD);
-		ItemStack PvPSoup = new ItemStack(Material.MUSHROOM_SOUP);
+		ItemStack PvPSoup = new ItemStack(Material.MUSHROOM_STEW);
 		ItemStack PvPHead = new ItemStack(Material.IRON_HELMET);
 		ItemStack PvPChest = new ItemStack(Material.IRON_CHESTPLATE);
 		ItemStack PvPLegs = new ItemStack(Material.IRON_LEGGINGS);
@@ -100,7 +97,7 @@ public class Main extends JavaPlugin implements Listener {
 	public void giveElite(Player p) {
 		Inventory inv = p.getInventory();
 		ItemStack PvPSword = new ItemStack(Material.DIAMOND_SWORD);
-		ItemStack PvPSoup = new ItemStack(Material.MUSHROOM_SOUP);
+		ItemStack PvPSoup = new ItemStack(Material.MUSHROOM_STEW);
 		ItemStack PvPHead = new ItemStack(Material.IRON_HELMET);
 		ItemStack PvPChest = new ItemStack(Material.IRON_CHESTPLATE);
 		ItemStack PvPLegs = new ItemStack(Material.IRON_LEGGINGS);
@@ -153,8 +150,6 @@ public class Main extends JavaPlugin implements Listener {
 	private Dwarf executor22;
 	private SlashSoup executor23;
 	private Viper executor24;
-	private Invsee executor25;
-	private PotPvP executor26;
 	private KTK executor27;
 	
 	//ARRAY LISTS//
@@ -167,18 +162,7 @@ public class Main extends JavaPlugin implements Listener {
 	   ArrayList<String> grandpa = new ArrayList<String>();
 	   
 	   
-	
-	 public static Economy economy = null;
-	
-	  private boolean setupEconomy()
-	    {
-	        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
-	        if (economyProvider != null) {
-	            economy = economyProvider.getProvider();
-	        }
 
-	        return (economy != null);
-	    }
 
 	//Define Events
 	private HungerDisable PlayerListener = new HungerDisable(this);
@@ -192,6 +176,7 @@ public class Main extends JavaPlugin implements Listener {
         saveConfig();
         settings.setup(this);
         setupEconomy();
+      
         
         
 	//Register Commands	
@@ -262,22 +247,11 @@ public class Main extends JavaPlugin implements Listener {
 	executor24 = new Viper(this);
 	getCommand("viper").setExecutor(executor24);
 	
-	executor25 = new Invsee(this);
-	getCommand("seeinv").setExecutor(executor25);
-	
-	executor26 = new PotPvP(this);
-	getCommand("potpvp").setExecutor(executor26);
-	
 	executor27 = new KTK(this);
 	getCommand("ktk").setExecutor(executor27);
 	
 	getCommand("voter").setExecutor(new Voter(this));
-	
-	getCommand("cspleef").setExecutor(new CSpleef(this));
-	
-	getCommand("cclear").setExecutor(new CClear(this));
-	
-	getCommand("cbspleef").setExecutor(new CBSpleef(this));
+
 	
 	getCommand("events").setExecutor(new Events(this));
 	
